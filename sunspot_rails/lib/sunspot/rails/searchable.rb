@@ -7,7 +7,7 @@ module Sunspot #:nodoc:
     # created and destroyed.
     #
     module Searchable
-      class <<self
+      class << self
         def included(base) #:nodoc:
           base.module_eval do
             extend(ActsAsMethods)

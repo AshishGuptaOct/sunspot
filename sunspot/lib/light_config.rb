@@ -3,7 +3,7 @@ module LightConfig
     def initialize(&block)
       @properties = {}
       ::LightConfig::Builder.new(self).instance_eval(&block)
-      singleton = (class <<self; self; end)
+      singleton = (class << self; self; end)
       @properties.keys.each do |property|
         singleton.module_eval do
           define_method property do
@@ -32,7 +32,7 @@ module LightConfig
     end
   end
 
-  class <<self
+  class << self
     def build(&block)
       LightConfig::Configuration.new(&block)
     end

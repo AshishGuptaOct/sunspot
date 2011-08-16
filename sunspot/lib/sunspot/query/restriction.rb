@@ -1,7 +1,7 @@
 module Sunspot
   module Query
     module Restriction #:nodoc:
-      class <<self
+      class << self
         #
         # Return the names of all of the restriction classes that should be made
         # available to the DSL.

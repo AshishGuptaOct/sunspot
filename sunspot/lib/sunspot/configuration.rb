@@ -10,7 +10,7 @@ module Sunspot
   #   count per page if it is not explicitly specified in the query.
   #
   module Configuration
-    class <<self
+    class << self
       # Factory method to build configuration instances.
       #
       # ==== Returns

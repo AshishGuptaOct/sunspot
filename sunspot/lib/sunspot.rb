@@ -44,7 +44,7 @@ module Sunspot
   autoload :Server, File.join(File.dirname(__FILE__), 'sunspot', 'server')
   autoload :Installer, File.join(File.dirname(__FILE__), 'sunspot', 'installer')
 
-  class <<self
+  class << self
     # 
     # Clients can inject a session proxy, allowing them to implement custom
     # session-management logic while retaining the Sunspot singleton API as

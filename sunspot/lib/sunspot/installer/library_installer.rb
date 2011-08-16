@@ -3,7 +3,7 @@ require 'fileutils'
 module Sunspot
   class Installer
     class LibraryInstaller
-      class <<self
+      class << self
         def execute(library_path, options)
           new(library_path, options).execute
         end

@@ -133,7 +133,7 @@ module Sunspot
       # Disjunctions combine their components with an OR operator.
       #
       class Disjunction < Abstract
-        class <<self
+        class << self
           def inverse
             Conjunction
           end
@@ -185,7 +185,7 @@ module Sunspot
       # Conjunctions combine their components with an AND operator.
       #
       class Conjunction < Abstract
-        class <<self
+        class << self
           def inverse
             Disjunction
           end

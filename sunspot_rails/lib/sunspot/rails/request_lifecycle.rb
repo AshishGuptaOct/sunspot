@@ -6,7 +6,7 @@ module Sunspot #:nodoc:
     # in the course of the request.
     #
     module RequestLifecycle
-      class <<self
+      class << self
         def included(base) #:nodoc:
           subclasses = base.subclasses.map do |subclass|
             begin

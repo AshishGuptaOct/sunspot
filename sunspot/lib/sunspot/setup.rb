@@ -286,7 +286,7 @@ module Sunspot
       get_inheritable_hash(name).values
     end
 
-    class <<self
+    class << self
       # 
       # Retrieve or create the Setup instance for the given class, evaluating
       # the given block to add to the setup's configuration

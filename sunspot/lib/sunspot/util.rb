@@ -4,7 +4,7 @@ module Sunspot
   # library.
   #
   module Util #:nodoc:
-    class <<self
+    class << self
       # 
       # Get all of the superclasses for a given class, including the class
       # itself.
@@ -199,7 +199,7 @@ module Sunspot
     Coordinates = Struct.new(:lat, :lng)
 
     class ContextBoundDelegate
-      class <<self
+      class << self
         def instance_eval_with_context(receiver, &block)
           calling_context = eval('self', block.binding)
           if parent_calling_context = calling_context.instance_eval{@__calling_context__}

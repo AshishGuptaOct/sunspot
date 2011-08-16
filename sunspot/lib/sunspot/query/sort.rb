@@ -14,7 +14,7 @@ module Sunspot
         :descending => 'desc'
       }
 
-      class <<self
+      class << self
         # 
         # Certain field names are "special", referring to specific non-field
         # sorts, which are generally by other metrics associated with hits.

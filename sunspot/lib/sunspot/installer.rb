@@ -4,7 +4,7 @@ end
 
 module Sunspot
   class Installer
-    class <<self
+    class << self
       def execute(solr_home, options = {})
         new(solr_home, options).execute
       end

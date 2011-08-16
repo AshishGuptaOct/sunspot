@@ -11,7 +11,7 @@ module Sunspot #:nodoc:
     autoload :Server, File.join(File.dirname(__FILE__), 'rails', 'server')
     autoload :VERSION, File.join(File.dirname(__FILE__), 'rails', 'version')
 
-    class <<self
+    class << self
       attr_writer :configuration
 
       def configuration

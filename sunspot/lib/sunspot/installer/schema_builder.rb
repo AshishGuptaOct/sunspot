@@ -19,7 +19,7 @@ module Sunspot
         File.dirname(__FILE__), '..', '..', '..', 'installer', 'config', 'schema.yml'
       )
 
-      class <<self
+      class << self
         def execute(schema_path, options = {})
           new(schema_path, options).execute
         end

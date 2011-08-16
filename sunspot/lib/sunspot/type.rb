@@ -24,7 +24,7 @@ module Sunspot
   #   Ruby type.
   #
   module Type
-    class <<self
+    class << self
       def register(sunspot_type, *classes)
         classes.each do |clazz|
           ruby_type_map[clazz.name.to_sym] = sunspot_type.instance

@@ -8,7 +8,7 @@ module Sunspot
   # again here.
   #
   class Session
-    class <<self
+    class << self
       attr_writer :connection_class #:nodoc:
       
       # 

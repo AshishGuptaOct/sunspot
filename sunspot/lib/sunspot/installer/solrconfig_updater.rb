@@ -9,7 +9,7 @@ module Sunspot
 
       CONFIG_FILES = %w(solrconfig.xml elevate.xml spellings.txt stopwords.txt synonyms.txt) 
 
-      class <<self
+      class << self
         def execute(solrconfig_path, options = {})
           new(solrconfig_path, options).execute
         end

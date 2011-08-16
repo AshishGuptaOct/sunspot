@@ -64,7 +64,7 @@ module Sunspot
         InstanceAdapter.index_id_for(@instance.class.name, id)
       end
 
-      class <<self
+      class << self
         # Instantiate an InstanceAdapter for the given object, searching for
         # registered adapters for the object's class.
         #
@@ -186,7 +186,7 @@ module Sunspot
         ids.map { |id| self.load(id) }
       end
 
-      class <<self
+      class << self
         # Create a DataAccessor for the given class, searching registered
         # adapters for the best match. See InstanceAdapter#adapt for discussion
         # of inheritence.
