@@ -7,6 +7,7 @@ module Sunspot
       attr_reader :search_session
       
       delegate :new_search, :search, :config,
+                :new_group_search, :group_search,
                 :new_more_like_this, :more_like_this,
                 :delete_dirty, :delete_dirty?,
                 :to => :search_session

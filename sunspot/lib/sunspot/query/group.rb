@@ -11,6 +11,10 @@ module Sunspot
         @field = @setup.field(field_name)
       end
 
+      def field_indexed_name
+        @field.indexed_name
+      end
+
       def limit(limit)
         @limit = limit
       end
@@ -28,7 +32,7 @@ module Sunspot
       end
 
       def to_params
-        p = { :group => 'true', :'group.main' => 'true' }
+        p = { :group => 'true', :'group.ngroups' => 'true' }
         p[:'group.field'] = @field.indexed_name
         p[:'group.limit'] = "#{@limit}" if @limit
         unless @sorts.empty?

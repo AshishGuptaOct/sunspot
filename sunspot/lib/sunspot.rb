@@ -339,6 +339,10 @@ module Sunspot
       session.new_more_like_this(object, *types, &block)
     end
 
+    def group_search(*types, &block)
+      session.group_search(*types, &block)
+    end
+
     # 
     # Initiate a MoreLikeThis search. MoreLikeThis is a special type of search
     # that finds similar documents using fulltext comparison. The fields to be

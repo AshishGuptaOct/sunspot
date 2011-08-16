@@ -35,11 +35,6 @@ module Sunspot
         function
       end
 
-      def add_group(group)
-        @components << group
-        group
-      end
-
       def paginate(page, per_page)
         if @pagination
           @pagination.page = page

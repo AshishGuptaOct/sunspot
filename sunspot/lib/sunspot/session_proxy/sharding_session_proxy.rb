@@ -174,6 +174,14 @@ module Sunspot
         new_search(*types).execute
       end
 
+      def new_group_search
+        raise NotImplementedError
+      end
+
+      def group_search
+        raise NotImplementedError
+      end
+
       def more_like_this(object, &block)
         #FIXME should use shards
         new_more_like_this(object, &block).execute

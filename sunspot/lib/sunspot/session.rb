@@ -82,6 +82,23 @@ module Sunspot
       mlt.execute
     end
 
+    def new_group_search(*types, &block)
+      types.flatten!
+      search = Search::GroupSearch.new(
+        connection,
+        setup_for_types(types),
+        Query::GroupQuery.new(types),
+        @config
+        )
+      search.build(&block) if block
+      search
+    end
+
+    def group_search(*types, &block)
+      gs = new_group_search(*types, &block)
+      gs.execute
+    end
+
     #
     # See Sunspot.index
     #

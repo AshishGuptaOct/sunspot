@@ -11,24 +11,36 @@ describe 'group' do
   end
 
   it 'should return one result for each group' do
-    search_result = Sunspot.search(Post) do
+    search_result = Sunspot.group_search(Post) do
       group do
         field :author_name
         order_by :title, :desc
         limit 1
       end
     end
-    search_result.results.should == [@posts[1], @posts[2]]
+    search_result.results.should == {'ram' => [@posts[1]], 'raghu' => [@posts[2]]}
   end
 
   it 'should return all posts' do
-    search_result = Sunspot.search(Post) do
+    search_result = Sunspot.group_search(Post) do
       group do
         field :author_name
         order_by :title, :asc
         limit 5
       end
     end
-    search_result.results.should == @posts
+    search_result.results.should == {'ram' => [@posts[0],@posts[1]], 'raghu' => [@posts[2]]}
+  end
+
+  it 'should work with pagination' do
+    search_result = Sunspot.group_search(Post) do
+      group do
+        field :author_name
+        order_by :title, :desc
+        limit 1
+      end
+      paginate(:page => 2, :per_page => 1)
+    end
+    search_result.results.should == { 'raghu' => [@posts[2]] }
   end
 end

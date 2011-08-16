@@ -7,8 +7,8 @@ describe Sunspot::SessionProxy::MasterSlaveSessionProxy do
   end
 
   {
-    :master_session => Sunspot::Session.public_instance_methods(false) - [:search, 'search', :new_search, 'new_search', :more_like_this, 'more_like_this', :new_more_like_this, 'new_more_like_this', :config, 'config'],
-    :slave_session => [:search, :new_search, :more_like_this, :new_more_like_this]
+    :master_session => Sunspot::Session.public_instance_methods(false) - [:search, 'search', :new_search, 'new_search', :group_search, 'group_search', :new_group_search, 'new_group_search', :more_like_this, 'more_like_this', :new_more_like_this, 'new_more_like_this', :config, 'config'],
+    :slave_session => [:search, :new_search, :group_search, :new_group_search, :more_like_this, :new_more_like_this]
   }.each_pair do |delegate, methods|
     methods.each do |method|
       it "should delegate #{method} to #{delegate}" do
